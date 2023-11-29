@@ -3,7 +3,7 @@ from flask import render_template, request
 from run import app
 from wxcloudrun.dao import delete_counterbyid, query_counterbyid, insert_counter, update_counterbyid
 from wxcloudrun.model import Counters
-from wxcloudrun.response import make_succ_empty_response, make_succ_response, make_err_response
+from wxcloudrun.response import make_succ_empty_response, make_succ_response, make_err_response, wx_msg_response
 
 
 @app.route('/')
@@ -67,4 +67,4 @@ def get_count():
 
 @app.route('/wx/api')
 def wxapi():
-    return 'ok'
+    return wx_msg_response()

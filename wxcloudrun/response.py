@@ -16,3 +16,8 @@ def make_succ_response(data):
 def make_err_response(err_msg):
     data = json.dumps({'code': -1, 'errorMsg': err_msg})
     return Response(data, mimetype='application/json')
+
+
+def wx_msg_response():
+    data = json.dumps({'code': 0, 'data': {}})
+    return Response(data, mimetype='application/json')
